@@ -42,4 +42,4 @@ To ensure correct operation, the following conditions must be satisfied:
 ./deploy.sh
 ```
 
-Under these conditions, the reported FLOPs reflect actual hardware-level execution rather than theoretical complexity estimates.
+Under these conditions, the reported FLOPs reflect actual hardware-level execution rather than theoretical complexity estimates. Results are saved in the `benchmark_perf.csv` file
