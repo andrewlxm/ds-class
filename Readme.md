@@ -1,8 +1,8 @@
 # Measurement of Real FLOPs Using Hardware Performance Counters
 
-To obtain realistic floating-point operation counts rather than theoretical estimates, we implemented a runtime measurement approach based on Linux hardware performance counters. The implementation relies on the perf tool, which interfaces directly with the Performance Monitoring Unit (PMU) of modern CPUs. This method enables counting floating-point instructions actually executed by the processor during model inference.
+Since we cannot find a tool to count the FLOPS on MacOS, we try implement a runtime measurement approach based on Linux hardware performance counters. The implementation relies on the `perf` tool, which interfaces directly with the Performance Monitoring Unit (PMU) of modern CPUs. This method enables counting floating-point instructions actually executed by the processor during model inference.
 
-The measurement code wraps the target computation between start and stop calls of a custom counter class. Internally, the counter launches a background perf stat process attached to the current process ID, recording floating-point arithmetic events while the workload runs.
+The measurement code wraps the target computation between start and stop calls of a custom counter class. Internally, the counter launches a background `perf stat` process attached to the current process ID, recording floating-point arithmetic events while the workload runs.
 
 ## Supported Floating-Point Events
 
@@ -21,7 +21,7 @@ If floating-point events are not available (for example in virtualized environme
 
 The measurement process follows these steps:
     1. Detect supported floating-point hardware events
-    2. Launch perf stat attached to the running process
+    2. Launch `perf stat` attached to the running process
     3. Execute the target workload (e.g., model prediction)
     4. Stop the counter using a SIGINT signal
     5. Parse the recorded statistics to compute total FLOPs
