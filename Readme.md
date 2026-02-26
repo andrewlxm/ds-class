@@ -20,11 +20,12 @@ If floating-point events are not available (for example in virtualized environme
 ## Runtime Measurement Procedure
 
 The measurement process follows these steps:
-    - Detect supported floating-point hardware events
-    - Launch perf stat attached to the running process
-    - Execute the target workload (e.g., model prediction)
-    - Stop the counter using a SIGINT signal
-    - Parse the recorded statistics to compute total FLOPs
+
+- Detect supported floating-point hardware events
+- Launch perf stat attached to the running process
+- Execute the target workload (e.g., model prediction)
+- Stop the counter using a SIGINT signal
+- Parse the recorded statistics to compute total FLOPs
 
 ## Requirements
 
