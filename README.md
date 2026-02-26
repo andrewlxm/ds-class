@@ -50,3 +50,6 @@ Under these conditions, the reported FLOPs reflect actual hardware-level executi
 The results show a substantial difference in real FLOPs between KNN and linear models (Logistic Regression, LinearSVC). KNN exhibits dramatically higher floating-point operations during inference because it computes distances against the entire training set. In contrast, linear models perform a single matrix-vector multiplication, resulting in much lower computational cost.
 
 On the other hand, the experimental results reveal that real FLOPs can differ significantly from theoretical estimates. Vectorized instructions may perform multiple operations per instruction, reducing the number of executed instructions while maintaining high computational throughput. Conversely, memory access overhead, branching, and non-floating-point operations are not reflected in theoretical counts but can influence runtime performance.
+
+## Acknowledgement
+I thank my friend Hoai-Thi Phung for his valuable instruction of hardware processing and docker. 
